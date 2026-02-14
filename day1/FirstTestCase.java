@@ -11,14 +11,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
  3) validate title should be "Your Store"
  4) Close browser
 */
+
 public class FirstTestCase{
 	public static void main(String[] args) throws InterruptedException {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--incognito");
 		WebDriver driver = new ChromeDriver(option);
-		Thread.sleep(5000);
 		driver.get("https://demo.opencart.com/");
-		Thread.sleep(5000);
 		driver.manage().window().maximize();
 		
 		String title = driver.getTitle();
@@ -28,5 +27,7 @@ public class FirstTestCase{
 		else {
 			System.out.println("Test Case Failed");
 		}
+		driver.close();
 	}
 }
+
